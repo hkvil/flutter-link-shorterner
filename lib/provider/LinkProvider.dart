@@ -24,13 +24,13 @@ class LinkProvider extends ChangeNotifier {
     if (response.statusCode == 200) {
       Map<String, dynamic> jsonResponse = json.decode(response.body);
       String resultUrl = jsonResponse['result_url'];
-      // String error = jsonResponse['error'];
       result = resultUrl;
       notifyListeners();
       EasyLoading.showSuccess("Success: Your URL has been shortened!");
       return result;
     } else {
-      EasyLoading.showError("Failed to shorten URL");
+      String error = json.decode(response.body)['error'];
+      EasyLoading.showError("Failed to shorten URL,$error");
       throw Exception('Failed to shorten URL');
     }
   }

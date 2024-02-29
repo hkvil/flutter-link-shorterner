@@ -24,6 +24,7 @@ class ShortenButton extends StatelessWidget {
                         .insert(result, tfController.text),
                     tfController.text = result
                   });
+          FocusScope.of(context).unfocus();
         },
         child: const Text("Shorten"),
       ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:learn_provider_1/component/CopyIconButton.dart';
 
 class CopyableTextField extends StatelessWidget {
   final TextEditingController tfController;
@@ -11,16 +11,8 @@ class CopyableTextField extends StatelessWidget {
       decoration: InputDecoration(
         border: const OutlineInputBorder(),
         hintText: 'Enter Link to Shorten Here...',
-        suffixIcon: IconButton(
-          onPressed: () {
-            Clipboard.setData(ClipboardData(text: tfController.text));
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                content: Text("Copied to Clipboard"),
-              ),
-            );
-          },
-          icon: const Icon(Icons.copy),
+        suffixIcon: CopyIconButton(
+          text: tfController.text,
         ),
       ),
       controller: tfController,

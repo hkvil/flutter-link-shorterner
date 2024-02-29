@@ -7,8 +7,12 @@ import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
 class DatabaseService extends ChangeNotifier {
   late Database _db;
+
+  DatabaseService() {
+    init();
+  }
   final createTableHistory =
-      "CREATE TABLE history (id INTEGER AUTOINCREMENT,shortUrl TEXT,longUrl TEXT,PRIMARY KEY(id))";
+      "CREATE TABLE history (id INTEGER PRIMARY KEY AUTOINCREMENT,shortUrl TEXT,longUrl TEXT)";
 
   Future<void> init() async {
     if (Platform.isWindows) {
@@ -22,6 +26,7 @@ class DatabaseService extends ChangeNotifier {
         await db.execute(createTableHistory);
       },
     );
+    print(_db);
     notifyListeners();
   }
 
@@ -34,10 +39,11 @@ class DatabaseService extends ChangeNotifier {
       },
       conflictAlgorithm: ConflictAlgorithm.replace,
     );
+    notifyListeners();
   }
 
   Future<List<Map<String, dynamic>>> getHistory() async {
-    var result = await _db.rawQuery("SELECT * FROM history");
+    var result = await _db.query("history");
     return result;
   }
 }

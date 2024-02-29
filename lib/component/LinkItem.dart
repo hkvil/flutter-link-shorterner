@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_provider_1/component/CopyIconButton.dart';
 
 class LinkItem extends StatelessWidget {
   final String longUrl;
@@ -8,15 +9,12 @@ class LinkItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100,
+      height: 120,
       child: Card.outlined(
-        child: Column(
-          children: [
-            ListTile(
-              title: Text(shortUrl),
-              subtitle: Text(longUrl),
-            )
-          ],
+        child: ListTile(
+          title: Text(shortUrl),
+          subtitle: Text(longUrl),
+          trailing: CopyIconButton(text: shortUrl),
         ),
       ),
     );
