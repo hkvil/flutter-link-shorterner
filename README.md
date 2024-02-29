@@ -1,16 +1,13 @@
-# learn_provider_1
+## Notes
+History not working on web version.
 
-A new Flutter project.
+## Library used
+<ul>
+  <li>provider: ^6.1.1</li>
+  <li>flutter_easyloading: ^3.0.5</li>
+  <li>sqflite: ^2.3.2</li>
+  <li>sqflite_common_ffi: ^2.3.2+1</li>
+  <li>sqflite_common_ffi_web: ^0.4.2+3</li>
+</ul>
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
