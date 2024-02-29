@@ -29,21 +29,3 @@ class HistoryScreen extends StatelessWidget {
         });
   }
 }
-  // @override
-  // Widget build(BuildContext context) {
-  //   return FutureBuilder(
-  //       future: Provider.of<DatabaseService>(context).getHistory(),
-  //       builder: (context, AsyncSnapshot<List<Map<String, dynamic>>> snapshot) {
-  //         if(snapshot.hasData){
-  //           ListView.builder(
-  //           itemCount: snapshot.data?.length ?? 0 ,
-  //           itemBuilder: ((context, index) {
-  //             Map<String,dynamic> data = snapshot.data![index];
-  //             LinkItem(longUrl: data['longUrl'],shortUrl: data['shortUrl']);
-              
-  //           })
-  //           )
-            
-  //         }else{
-
-  //         }}
